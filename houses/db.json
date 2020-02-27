@@ -1,0 +1,34 @@
+[
+  {
+    "id": "1",
+    "name": "Gryffindor",
+    "color": "Red And Gold",
+    "logo": "Lion",
+    "character": "Brave",
+    "head": "Minerva McGonagall"
+  },
+  {
+    "id": "2",
+    "name": "Hufflepuff",
+    "color": "Yellow and Black",
+    "logo": "Badger",
+    "character": "Patient, Fair, Hard Working",
+    "head": "Pomona Sprout"
+  },
+  {
+    "id": "3",
+    "name": "Ravenclaw",
+    "color": "Blue and Silver",
+    "logo": "Eagle",
+    "character": "Wisdom, Learning, Wit",
+    "head": "Filius Flitwick" 
+  },
+  {
+    "id": "4",
+    "name": "Slytherin",
+    "color": "Green and Silver",
+    "logo": "Snake",
+    "character": "Ambition, Determination, Leadership",
+    "head": "Severus Snape"
+  }
+]
