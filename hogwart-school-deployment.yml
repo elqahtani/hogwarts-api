@@ -32,7 +32,7 @@ spec:
     spec:
       containers:
       - name: hogwarts-school
-        image: elqahtani/hogwart-school:latest
+        image: elqahtani/hogwart-school:$BUILD_NUMBER
         ports:
         - containerPort: 8081
       restartPolicy: Always
