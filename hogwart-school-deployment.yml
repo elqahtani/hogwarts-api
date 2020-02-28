@@ -1,0 +1,56 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: hogwarts-school-service
+spec:
+  ports:
+  - port: 8081
+    protocol: TCP
+    #type: LoadBalancer
+  selector:
+    app: hogwarts-school
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hogwart-school-deployment
+  labels:
+    app: hogwarts-school
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hogwarts-school
+      track: stable
+  template:
+    metadata:
+      labels:
+        app: hogwarts-school
+        track: stable
+    spec:
+      containers:
+      - name: hogwarts-school
+        image: elqahtani/hogwart-school:latest
+        ports:
+        - containerPort: 8081
+      restartPolicy: Always
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: hogwarts-school-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: hogwarts.belajarlinux.web.id
+    http:
+      paths:
+      #- path: /
+      - backend:
+          serviceName: hogwarts-school-service
+          servicePort: 8081
