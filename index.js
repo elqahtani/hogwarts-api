@@ -13,7 +13,7 @@ app.get('/api/', (req, res) => {
 });
 
 app.get('/api/version', (req, res) => {
-   res.json({ message: 'Version : 0.0.7' });
+   res.json({ message: 'Version : 0.0.8' });
 });
 
 app.get("/api/houses", (req, res) => {
